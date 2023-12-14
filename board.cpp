@@ -1,6 +1,6 @@
 #include "board.h"
 
-Board::Board(int width, int height) : content(vector <vector <int>> (height, vector <int> (width, 4))) {}
+Board::Board(int width, int height) : content(vector <vector <int>> (height, vector <int> (width, 0))) {}
 
 void Board::render() {
 	for (int y = 0; y < content.size(); y++) {
