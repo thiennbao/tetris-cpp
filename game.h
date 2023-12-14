@@ -12,10 +12,10 @@ private:
 	Tetromino current, next;
 	int score;
 	double tick, lastTick;
+	void action();
+	bool fall();
 public:
 	Game();
-	void action();
-	void fall();
 	void run();
 };
 

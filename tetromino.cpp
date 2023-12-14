@@ -46,9 +46,20 @@ Tetromino::Tetromino(int type) : type(type + 1), origin({ 0, 0 }), direction(0) 
 	}
 }
 
+int Tetromino::getType() {
+	return type;
+}
+vector <pair <int, int>> Tetromino::getCurrentCells() {
+	vector <pair <int, int>> cells;
+	for (auto cell : cellSet[direction]) {
+		cells.push_back({ cell.first + origin.first, cell.second + origin.second });
+	}
+	return cells;
+}
+
 void Tetromino::render() {
 	for (auto cell : cellSet[direction]) {
-		DrawRectangle((cell.first + origin.first) * CELL_SIZE + 1, (cell.second + origin.second) * CELL_SIZE + 1, CELL_SIZE - 1, CELL_SIZE - 1, COLORS.at(type - 1));
+		DrawRectangle((cell.first + origin.first) * CELL_SIZE + 1, (cell.second + origin.second) * CELL_SIZE + 1, CELL_SIZE - 1, CELL_SIZE - 1, COLORS.at(type));
 	}
 }
 

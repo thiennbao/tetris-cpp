@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     InitWindow(400, 800, "Tetris");
     SetTargetFPS(60);
-    srand(GetTime());
+    srand(time(0));
 
     while (!WindowShouldClose()) {
         Game game;

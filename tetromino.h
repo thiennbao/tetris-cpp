@@ -17,6 +17,8 @@ private:
 	vector <pair <int, int>> cellSet[4];
 public:
 	Tetromino(int type = 0);
+	int getType();
+	vector <pair <int, int>> getCurrentCells();
 	void render();
 	void move(int x, int y);
 	void rotateCW();
