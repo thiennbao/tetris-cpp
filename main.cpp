@@ -1,16 +1,18 @@
 #include <iostream>
 #include <raylib.h>
+#include "board.h"
 
 using namespace std;
 
 int main() {
-    Color green = { 25, 135, 84 };
-    InitWindow(300, 600, "Tetris");
+    InitWindow(400, 800, "Tetris");
     SetTargetFPS(60);
 
+    Board board(10, 20);
     while (!WindowShouldClose()) {
         BeginDrawing();
-        ClearBackground(green);
+        ClearBackground({0, 0, 0});
+        board.render();
         EndDrawing();
     }
 
