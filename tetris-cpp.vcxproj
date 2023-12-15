@@ -131,12 +131,14 @@
     <ClCompile Include="constants.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="tetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="tetromino.h" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +149,8 @@
     <Image Include="background-1.png" />
     <Image Include="background-2.png" />
     <Image Include="background-3.png" />
+    <Image Include="background-menu.png" />
+    <Image Include="logo.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

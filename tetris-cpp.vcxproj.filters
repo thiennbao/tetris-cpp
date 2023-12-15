@@ -30,6 +30,9 @@
     <ClCompile Include="constants.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -61,6 +67,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="background-3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="background-menu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="logo.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <raylib.h>
 #include "constants.h"
+#include "menu.h"
 #include "game.h"
 
 using namespace std;
@@ -8,11 +9,21 @@ using namespace std;
 int main() {
     InitWindow(800, 800, "Tetris");
     SetTargetFPS(60);
-    srand(time(0));
+    Menu menu;
 
     while (!WindowShouldClose()) {
-        Game game(0);
-        game.run();
+        menu.render();
+
+        if (menu.getOption() == 0) {
+            Game game(menu.getLevel());
+            game.run();
+        } else if (menu.getOption() == 1) {
+            // Add help screen later
+        } else {
+            // Quit
+            break;
+        }
+
     }
 
     CloseWindow();

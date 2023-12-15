@@ -1,6 +1,6 @@
 #include "game.h"
 
-Game::Game(int level) : board(), current(rand() % 7), next(rand() % 7), difficulty(level), score(0), tick(1 - difficulty * 0.3), lastTick(0) {
+Game::Game(int level) : board(), current(GetRandomValue(1, 7)), next(GetRandomValue(1, 7)), difficulty(level), score(0), tick(1 - difficulty * 0.3), lastTick(0) {
 	// Center the block
 	if (current.getType() == 1) {
 		current.setOrigin(3, 0); // I block
@@ -54,7 +54,7 @@ bool Game::fall() {
 			else {
 				current.setOrigin(4, 0);
 			}
-			next = Tetromino(rand() % 7);
+			next = Tetromino(GetRandomValue(1, 7));
 		}
 		lastTick = now;
 	}
@@ -85,7 +85,7 @@ void Game::run() {
 			while (!WindowShouldClose() && GetKeyPressed() != KEY_ENTER) {
 				BeginDrawing();
 				ClearBackground(RAYWHITE);
-				DrawTexture(background, 800 / 2 - background.width / 2, 800 / 2 - background.height / 2, WHITE);
+				DrawTexture(background, 400 - background.width / 2, 400 - background.height / 2, WHITE);
 				DrawRectangle(150, 300, 500, 200, COLORS.at(0));
 				Vector2 gameOverTextSize = MeasureTextEx(font, string("GAME OVER").c_str(), 50, 5);
 				DrawTextEx(font, string("GAME OVER ").c_str(), { 150 + (250 - gameOverTextSize.x / 2) , 350}, 50, 5, WHITE);

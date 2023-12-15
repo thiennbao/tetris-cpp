@@ -15,7 +15,7 @@ private:
 	int direction;
 	vector <pair <int, int>> cellSet[4];
 public:
-	Tetromino(int type = 0);
+	Tetromino(int type = 1);
 	void setOrigin(int x, int y);
 	int getType();
 	vector <pair <int, int>> getCurrentCells();

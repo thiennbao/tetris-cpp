@@ -1,41 +1,41 @@
 #include "tetromino.h"
 
-Tetromino::Tetromino(int type) : type(type + 1), origin({ 0, 0 }), direction(0) {
-	if (type == 0) {
+Tetromino::Tetromino(int type) : type(type), origin({ 0, 0 }), direction(0) {
+	if (type == 1) {
 		// I block
 		cellSet[0] = { {0, 1}, {1, 1}, {2, 1}, {3, 1} };
 		cellSet[1] = { {2, 0}, {2, 1}, {2, 2}, {2, 3} };
 		cellSet[2] = { {0, 2}, {1, 2}, {2, 2}, {3, 2} };
 		cellSet[3] = { {1, 0}, {1, 1}, {1, 2}, {1, 3} };
-	} else if (type == 1) {
+	} else if (type == 2) {
 		// O block
 		cellSet[0] = cellSet[1] = cellSet[2] = cellSet[3] = { {0, 0}, {0, 1}, {1, 0}, {1, 1} };
-	} else if (type == 2) {
+	} else if (type == 3) {
 		// T block
 		cellSet[0] = { {0, 1}, {1, 0}, {1, 1}, {1, 2} };
 		cellSet[1] = { {0, 1}, {1, 0}, {1, 1}, {2, 1} };
 		cellSet[2] = { {1, 0}, {1, 1}, {1, 2}, {2, 1} };
 		cellSet[3] = { {0, 1}, {1, 1}, {1, 2}, {2, 1} };
-	} else if (type == 3) {
+	} else if (type == 4) {
 		// L block
 		cellSet[0] = { {0, 2}, {1, 0}, {1, 1}, {1, 2} };
 		cellSet[1] = { {0, 0}, {0, 1}, {1, 1}, {2, 1} };
 		cellSet[2] = { {1, 0}, {1, 1}, {1, 2}, {2, 0} };
 		cellSet[3] = { {0, 1}, {1, 1}, {2, 1}, {2, 2} };
-	} else if (type == 4) {
+	} else if (type == 5) {
 		// J block
 		cellSet[0] = { {0, 0}, {1, 0}, {1, 1}, {1, 2} };
 		cellSet[1] = { {0, 1}, {1, 1}, {2, 0}, {2, 1} };
 		cellSet[2] = { {1, 0}, {1, 1}, {1, 2}, {2, 2} };
 		cellSet[3] = { {0, 1}, {0, 2}, {1, 1}, {2, 1} };
-	} else if (type == 5) {
+	} else if (type == 6) {
 		// S block
 		cellSet[0] = { {0, 1}, {0, 2}, {1, 0}, {1, 1} };
 		cellSet[1] = { {0, 0}, {1, 0}, {1, 1}, {2, 1} };
 		cellSet[2] = { {1, 1}, {1, 2}, {2, 0}, {2, 1} };
 		cellSet[3] = { {0, 1}, {1, 1}, {1, 2}, {2, 2} };
 	}
-	else if (type == 6) {
+	else if (type == 7) {
 		// Z block
 		cellSet[0] = { {0, 0}, {0, 1}, {1, 1}, {1, 2} };
 		cellSet[1] = { {0, 1}, {1, 0}, {1, 1}, {2, 0} };
@@ -75,5 +75,5 @@ void Tetromino::rotateCW() {
 	direction = (direction + 1) % 4;
 }
 void Tetromino::rotateCCW() {
-	direction = (direction - 1) % 4;
+	direction = (direction - 1 + 4) % 4;
 }
