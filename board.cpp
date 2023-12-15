@@ -1,26 +1,26 @@
 #include "board.h"
 
-Board::Board(int width, int height) : content(vector <vector <int>> (height, vector <int> (width, 0))) {}
+Board::Board() : content(vector <vector <int>> (20, vector <int> (10, 0))) {}
 
 void Board::render() {
 	for (int y = 0; y < content.size(); y++) {
 		for (int x = 0; x < content.at(y).size(); x++) {
-			DrawRectangle(x * CELL_SIZE + 1, y * CELL_SIZE + 1, CELL_SIZE - 1, CELL_SIZE - 1, COLORS.at(content.at(y).at(x)));
+			DrawRectangle(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE - 1, CELL_SIZE - 1, COLORS.at(content.at(y).at(x)));
 		}
 	}
 }
 
 bool Board::fill(Tetromino &tetromino) {
-	try {
-		for (auto cell : tetromino.getCurrentCells()) {
+	for (auto cell : tetromino.getCurrentCells()) {
+		if (content.at(cell.second).at(cell.first) == 0) {
 			content.at(cell.second).at(cell.first) = tetromino.getType();
+		} else {
+			// Collide when filling
+			return false;
 		}
-		// Fill all cell successfully
-		return true;
-	} catch (out_of_range) {
-		// Cell out of the board
-		return false;
 	}
+	// Fill all cell successfully
+	return true;
 }
 bool Board::checkCollision(Tetromino& tetromino) {
 	try {

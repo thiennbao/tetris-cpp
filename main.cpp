@@ -1,16 +1,17 @@
 #include <iostream>
 #include <raylib.h>
+#include "constants.h"
 #include "game.h"
 
 using namespace std;
 
 int main() {
-    InitWindow(400, 800, "Tetris");
+    InitWindow(800, 800, "Tetris");
     SetTargetFPS(60);
     srand(time(0));
 
     while (!WindowShouldClose()) {
-        Game game;
+        Game game(0);
         game.run();
     }
 

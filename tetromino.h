@@ -7,7 +7,6 @@
 #include "constants.h"
 
 using namespace std;
-using namespace constants;
 
 class Tetromino {
 private:
@@ -17,9 +16,10 @@ private:
 	vector <pair <int, int>> cellSet[4];
 public:
 	Tetromino(int type = 0);
+	void setOrigin(int x, int y);
 	int getType();
 	vector <pair <int, int>> getCurrentCells();
-	void render();
+	void render(int offsetX = 0, int offsetY = 0);
 	void move(int x, int y);
 	void rotateCW();
 	void rotateCCW();

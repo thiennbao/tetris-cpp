@@ -7,13 +7,12 @@
 #include "tetromino.h"
 
 using namespace std;
-using namespace constants;
 
 class Board {
 private:
 	vector <vector <int>> content;
 public:
-	Board(int witdth = 0, int height = 0);
+	Board();
 	void render();
 	bool fill(Tetromino &tetromino);
 	bool checkCollision(Tetromino& tetromino);

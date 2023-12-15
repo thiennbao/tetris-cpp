@@ -27,6 +27,9 @@
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="constants.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h">
@@ -41,5 +44,24 @@
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="monogram.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="background-0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="background-1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="background-2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="background-3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

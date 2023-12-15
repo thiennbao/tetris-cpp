@@ -13,9 +13,9 @@ Tetromino::Tetromino(int type) : type(type + 1), origin({ 0, 0 }), direction(0) 
 	} else if (type == 2) {
 		// T block
 		cellSet[0] = { {0, 1}, {1, 0}, {1, 1}, {1, 2} };
-		cellSet[1] = { {0, 1}, {1, 1}, {1, 2}, {2, 1} };
+		cellSet[1] = { {0, 1}, {1, 0}, {1, 1}, {2, 1} };
 		cellSet[2] = { {1, 0}, {1, 1}, {1, 2}, {2, 1} };
-		cellSet[3] = { {0, 1}, {1, 0}, {1, 1}, {2, 1} };
+		cellSet[3] = { {0, 1}, {1, 1}, {1, 2}, {2, 1} };
 	} else if (type == 3) {
 		// L block
 		cellSet[0] = { {0, 2}, {1, 0}, {1, 1}, {1, 2} };
@@ -46,6 +46,10 @@ Tetromino::Tetromino(int type) : type(type + 1), origin({ 0, 0 }), direction(0) 
 	}
 }
 
+void Tetromino::setOrigin(int x, int y) {
+	origin = { x, y };
+}
+
 int Tetromino::getType() {
 	return type;
 }
@@ -57,9 +61,9 @@ vector <pair <int, int>> Tetromino::getCurrentCells() {
 	return cells;
 }
 
-void Tetromino::render() {
+void Tetromino::render(int offsetX, int offsetY) {
 	for (auto cell : cellSet[direction]) {
-		DrawRectangle((cell.first + origin.first) * CELL_SIZE + 1, (cell.second + origin.second) * CELL_SIZE + 1, CELL_SIZE - 1, CELL_SIZE - 1, COLORS.at(type));
+		DrawRectangle((cell.first + origin.first) * CELL_SIZE + offsetX, (cell.second + origin.second) * CELL_SIZE + offsetY, CELL_SIZE - 1, CELL_SIZE - 1, COLORS.at(type));
 	}
 }
 

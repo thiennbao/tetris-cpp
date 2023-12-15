@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="board.cpp" />
+    <ClCompile Include="constants.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="tetromino.cpp" />
@@ -137,6 +138,15 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="tetromino.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="monogram.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="background-0.png" />
+    <Image Include="background-1.png" />
+    <Image Include="background-2.png" />
+    <Image Include="background-3.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
