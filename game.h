@@ -4,6 +4,7 @@
 #include <string>
 #include "board.h"
 #include "tetromino.h"
+#include "menu.h"
 
 using namespace std;
 
@@ -16,6 +17,9 @@ private:
 	double tick, lastTick;
 	void action();
 	bool fall();
+
+	Music gameMusic;
+	Sound gameSound;
 public:
 	Game(int level = 0);
 	void run();

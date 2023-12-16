@@ -7,20 +7,28 @@ Game::Game(int level) : board(), current(GetRandomValue(1, 7)), next(GetRandomVa
 	} else {
 		current.setOrigin(4, 0);
 	}
+	gameSound = LoadSound("Music/GameMoveSound.wav");
+	gameMusic = LoadMusicStream("Music/GameBackground.mp3");
+	PlayMusicStream(gameMusic);
 }
 
 void Game::action() {
 	int key = GetKeyPressed();
 	Tetromino prevState = current;
 	if (key == KEY_UP) {
+		PlaySound(gameSound);
 		current.rotateCW();
 	} else if (key == KEY_LEFT) {
+		PlaySound(gameSound);
 		current.move(-1, 0);
 	} else if (key == KEY_RIGHT) {
+		PlaySound(gameSound);
 		current.move(1, 0);
 	} else if (key == KEY_DOWN) {
+		PlaySound(gameSound);
 		current.move(0, 1);
 	} else if (key == KEY_SPACE) {
+		PlaySound(gameSound);
 		while (!board.checkCollision(current)) {
 			prevState = current;
 			current.move(0, 1);
@@ -79,7 +87,7 @@ void Game::run() {
 	while (!WindowShouldClose()) {
 		action();
 		bool isOver = fall();
-
+		UpdateMusicStream(gameMusic);
 		if (isOver) {
 			// Game over screen
 			while (!WindowShouldClose() && GetKeyPressed() != KEY_ENTER) {

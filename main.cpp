@@ -19,6 +19,10 @@ int main() {
             game.run();
         } else if (menu.getOption() == 1) {
             // Add help screen later
+            while (!IsKeyPressed(KEY_BACKSPACE))
+            {
+                menu.drawHelpScreen();
+            }
         } else {
             // Quit
             break;
